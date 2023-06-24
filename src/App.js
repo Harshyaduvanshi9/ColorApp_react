@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ColorPalette from './component/ColorPalette';
+import './cruc.css';
 
-function App() {
+const App = () => {
+  const handleColorSelect = (color) => {
+    console.log('Selected color:', color);
+    // Do something with the selected color
+  };
+
+  const colors = ['#FF0000', '#00FF00', '#0000FF','#FFFF00', 
+  '#FF00FF', 
+  '#00FFFF', '#37D67A','#697689','#555555'];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Color Palette</h1>
+      <ColorPalette colors={colors} onSelectColor={handleColorSelect} />
     </div>
   );
-}
+};
 
 export default App;
